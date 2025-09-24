@@ -1,0 +1,208 @@
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0 auto;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card {
+    margin: 60px auto 0;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 470px;
+    padding: 40px 35px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.search{
+    width: calc(100% - 20px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    margin: 0 auto 25px auto;
+    gap: 12px;
+}
+
+.search input {
+    border: 0;
+    outline: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 12px 20px;
+    height: 45px;
+    border-radius: 15px;
+    flex: 1;
+    margin-right: 0;
+    font-size: 16px;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-sizing: border-box;
+}
+
+.search input:focus {
+    background-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 
+        inset 0 2px 8px rgba(0, 0, 0, 0.1),
+        0 0 0 2px rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.search input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+}
+
+.search i {
+    font-size: 16px;
+    color: #5b548a;
+    transition: all 0.3s ease;
+}
+
+.search button {
+    border: 0;
+    outline: 0;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+.search button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 1);
+}
+
+.search button:hover i {
+    color: #00feba;
+    transform: scale(1.1);
+}
+
+.search button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(0, 254, 186, 0.1);
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%);
+}
+
+.search button:hover::before {
+    width: 100%;
+    height: 100%;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    margin: 30px 0px 0px 0px;
+}
+
+.weatherIcon{
+    width: 180px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.temp{
+    font-size: 80px;
+    font-weight: 500;
+    margin: 10px 0px 20px 0px;
+}
+
+.city{
+    font-size: 45px;
+    font-weight: 500;
+    margin-top: -10px;
+    font-weight: bold;
+}
+.col {
+    display: flex;
+    align-items: center;
+    text-align: left;
+}
+
+.col i {
+    font-size: 40px;
+    margin-right: 10px;
+}
+
+.status{
+    font-size: 28px;
+    margin-top: 3px;
+    margin-bottom: 13px;
+}
+
+.humidity, .wind {
+    font-size: 17px;
+    margin-bottom: 0px;
+}
+
+.weatherInfo {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    padding: 30px 20px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    margin-top: 20px;
+}
+
+.weatherIcon {
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.weatherIcon:hover {
+    transform: scale(1.05);
+}
+
+.temp {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.city {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.info {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 25px;
+}
