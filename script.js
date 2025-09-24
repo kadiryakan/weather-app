@@ -1,4 +1,4 @@
-const key = "KEY HERE";
+const key = "8788f3171dd1b4f9b25765e6d5bc69cf";
 const url = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 const temp = document.querySelector(".temp");
 const city = document.querySelector(".city");
@@ -77,4 +77,10 @@ const changeStatus = (data) => {
 
 searchButton.addEventListener("click", () => {
   fetchWeather(searchInput.value);
+});
+
+searchInput.addEventListener("keypress", (event) => {
+  if (event.key === "Enter") {
+    fetchWeather(searchInput.value);
+  }
 });
