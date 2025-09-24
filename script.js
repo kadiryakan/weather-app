@@ -1,4 +1,4 @@
-const key = "KEY HERE";
+const key = "8788f3171dd1b4f9b25765e6d5bc69cf";
 const url = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 const temp = document.querySelector(".temp");
 const city = document.querySelector(".city");
@@ -23,10 +23,42 @@ const getWeatherImage = (weatherMain) => {
   return weatherImages[weatherMain] || "img/clear.png";
 };
 
+const showError = (message) => {
+  const existingWeatherInfo = document.querySelector(".weatherInfo");
+  if (existingWeatherInfo) {
+    existingWeatherInfo.remove();
+  }
+
+  const div = document.createElement("div");
+  div.classList.add("weatherInfo");
+
+  div.style.opacity = "0";
+  div.style.transform = "translateY(30px) scale(0.9)";
+  div.style.transition = "all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)";
+
+  div.innerHTML = `<h1 class="error-message">${message}</h1>`;
+
+  document.querySelector(".card").appendChild(div);
+
+  setTimeout(() => {
+    div.style.opacity = "1";
+    div.style.transform = "translateY(0) scale(1)";
+  }, 50);
+};
+
 const fetchWeather = async (city) => {
-  const response = await fetch(`${url}${city}&appid=${key}`);
-  const data = await response.json();
-  changeStatus(data);
+  try {
+    const response = await fetch(`${url}${city}&appid=${key}`);
+    const data = await response.json();
+
+    if (data.cod === "404" || data.cod === 404) {
+      showError("Please enter a valid city");
+    } else {
+      changeStatus(data);
+    }
+  } catch (error) {
+    showError("Please enter a valid city");
+  }
 };
 
 const changeStatus = (data) => {
