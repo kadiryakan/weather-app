@@ -1,4 +1,4 @@
-const key = "KEY HERE";
+const key = "8788f3171dd1b4f9b25765e6d5bc69cf";
 const url = "https://api.openweathermap.org/data/2.5/weather?units=metric&q=";
 const temp = document.querySelector(".temp");
 const city = document.querySelector(".city");
@@ -62,6 +62,7 @@ const fetchWeather = async (city) => {
 };
 
 const changeStatus = (data) => {
+  document.querySelector("title").textContent = `${data.name} | Weather App`;
   const existingWeatherInfo = document.querySelector(".weatherInfo");
   if (existingWeatherInfo) {
     existingWeatherInfo.remove();
