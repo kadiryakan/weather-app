@@ -7,6 +7,7 @@ You need the take a key from <a href="https://openweathermap.org/">openweatherma
 <img src="img/lmao3.png" width="400">
 
 If user enters a invalid value shows warning.
+
 <img src="img/lmao4.png" width="400">
 
 Writed with Vanilla Javascript | </>.
